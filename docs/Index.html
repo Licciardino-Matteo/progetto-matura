@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="progetto maturità">
+  <meta name="description" content="template HTML">
+  <meta name="keywords" content="template, treno">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biglietti del treno</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="website icon" type="png" href="./img/ticket.png">
+
+  <script type="text/javascript"
+    src="./node_modules/@emailjs/browser/dist/email.js">
+  </script>
+  <script type="text/javascript">
+   (function(){emailjs.init("3cjCK9gan2iN8iIJj");})();
+  </script>
+</head>
+
+<body>
+<div class="form-box">
+  <form class="form" id="prenotazione-form">
+    <span class="title">Sito di prenotazione</span>
+    <span class="subtitle">
+      Prenotare dei biglietti del treno.
+    </span>
+    <div class="form-container">
+        <span class="sottotitolo" class="subtitle" for="nome">Inserisci il tuo nome: </span><br>
+        <input type="text" class="input" placeholder="Nome..." id="nome" autocomplete="off">
+        <span class="sottotitolo" class="subtitle" for="cognome">Inserisci il tuo cognome: </span><br>
+        <input type="text" class="input" placeholder="Cognome..." id="cognome" autocomplete="off">
+        <span class="sottotitolo" class="subtitle" for="email">Inserisci la tua email: </span><br>
+        <input type="email" class="input" placeholder="Email..." id="email" autocomplete="off">
+        <div class="orari">
+          <span class="sottotitolo" class="subtitle" for="data">Prenota il biglietto a seconda dell'ora</span><br>
+          <input type="datetime-local" class="checkbox" id="data" autocomplete="off"><br>
+          <button onclick="sendMail()">Invia</button>
+        </div>
+    </div>
+  </form>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
